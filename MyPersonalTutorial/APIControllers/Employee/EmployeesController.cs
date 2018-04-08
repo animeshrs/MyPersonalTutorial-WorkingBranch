@@ -17,12 +17,12 @@ namespace MyPersonalTutorial.APIControllers.Employees
             _iEmployeeModelBuilder = iEmployeeModelBuilder;
         }
 
-        //public List<EmployeeViewModel> GetEmployees()
-        //{
-        //    var listOfEmployees = _iEmployeeModelBuilder.GetEmployees();
-        //    var listOfEmployeeVms = listOfEmployees.Select(Mapper.Map<EmployeeViewModel>).ToList();
-        //    return listOfEmployeeVms;
-        //}
+        public List<EmployeeViewModel> GetEmployees()
+        {
+            var listOfEmployees = _iEmployeeModelBuilder.GetEmployees();
+            var listOfEmployeeVms = listOfEmployees.Select(Mapper.Map<EmployeeViewModel>).ToList();
+            return listOfEmployeeVms;
+        }
 
         [HttpPost]
         public EmployeeViewModel AddEmployee(EmployeeViewModel viewModel)
@@ -39,11 +39,11 @@ namespace MyPersonalTutorial.APIControllers.Employees
             return new EmployeeViewModel();
         }
 
-        public EmployeeViewModel GetEmployeeById(int employeeId)
-        {
-            var employee = _iEmployeeModelBuilder.GetEmployeeById(employeeId);
-            var employeeVm = Mapper.Map<EmployeeViewModel>(employee);
-            return employeeVm;
-        }
+        //public EmployeeViewModel GetEmployeeById(int employeeId)
+        //{
+        //    var employee = _iEmployeeModelBuilder.GetEmployeeById(employeeId);
+        //    var employeeVm = Mapper.Map<EmployeeViewModel>(employee);
+        //    return employeeVm;
+        //}
     }
 }
